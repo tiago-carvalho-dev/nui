@@ -25,12 +25,12 @@
     self.nuiApplied = YES;
 }
 
-- (void)override_becomeKeyWindow
+- (void)override_UIWindow_becomeKeyWindow
 {
     if (!self.isNUIApplied) {
         [self applyNUI];
     }
-    [self override_becomeKeyWindow];
+    [self override_UIWindow_becomeKeyWindow];
 }
 
 @end

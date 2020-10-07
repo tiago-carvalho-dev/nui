@@ -26,12 +26,12 @@
     self.nuiApplied = YES;
 }
 
-- (void)override_didMoveToWindow
+- (void)override_UIPageControl_didMoveToWindow
 {
     if (!self.isNUIApplied) {
         [self applyNUI];
     }
-    [self override_didMoveToWindow];
+    [self override_UIPageControl_didMoveToWindow];
 }
 
 @end

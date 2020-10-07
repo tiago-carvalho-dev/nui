@@ -73,32 +73,32 @@
     }
 }
 
-- (void)override_didMoveToWindow
+- (void)override_UIButton_didMoveToWindow
 {
     if (!self.isNUIApplied) {
         [self applyNUI];
     }
-    [self override_didMoveToWindow];
+    [self override_UIButton_didMoveToWindow];
 }
 
-- (void)override_setTitle:(NSString *)title forState:(UIControlState)state
+- (void)override_UIButton_setTitle:(NSString *)title forState:(UIControlState)state
 {
     NSString *transformedTitle = title;
     
     if (title && self.nuiClass && ![self.nuiClass isEqualToString:kNUIClassNone])
         transformedTitle = [NUIRenderer transformText:title withClass:self.nuiClass];
     
-    [self override_setTitle:transformedTitle forState:state];
+    [self override_UIButton_setTitle:transformedTitle forState:state];
 }
 
-- (void)override_setAttributedTitle:(NSAttributedString *)title forState:(UIControlState)state
+- (void)override_UIButton_setAttributedTitle:(NSAttributedString *)title forState:(UIControlState)state
 {
     NSAttributedString *transformedTitle = title;
     
     if (title && self.nuiClass && ![self.nuiClass isEqualToString:kNUIClassNone])
         transformedTitle = [NUIRenderer transformAttributedText:title withClass:self.nuiClass];
     
-    [self override_setAttributedTitle:transformedTitle forState:state];
+    [self override_UIButton_setAttributedTitle:transformedTitle forState:state];
 }
 
 - (void)setGradientLayer:(CALayer *)gradientLayer

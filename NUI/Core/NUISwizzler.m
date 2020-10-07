@@ -62,7 +62,7 @@
 - (void)swizzle:(Class)class methodName:(NSString*)methodName
 {
     SEL originalMethod = NSSelectorFromString(methodName);
-    SEL newMethod = NSSelectorFromString([NSString stringWithFormat:@"%@%@", @"override_", methodName]);
+    SEL newMethod = NSSelectorFromString([NSString stringWithFormat:@"%@%@_%@", @"override_", NSStringFromClass(class), methodName]);
     [self swizzle:class from:originalMethod to:newMethod];
 }
 
