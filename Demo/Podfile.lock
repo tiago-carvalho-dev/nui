@@ -5,7 +5,7 @@ PODS:
 
 DEPENDENCIES:
   - FBSnapshotTestCase (~> 1.6)
-  - NUIParse (from `https://github.com/digitalindiana/NUIParse.git`, branch `master`)
+  - NUIParse (from `https://github.com/smithmicro/NUIParse.git`, branch `master`)
   - "UIImage+ColorFromImage (= 0.0.2)"
 
 SPEC REPOS:
@@ -16,18 +16,18 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   NUIParse:
     :branch: master
-    :git: https://github.com/digitalindiana/NUIParse.git
+    :git: https://github.com/smithmicro/NUIParse.git
 
 CHECKOUT OPTIONS:
   NUIParse:
     :commit: 19674441507cf6013dd38701d10c1e20e98e4c3b
-    :git: https://github.com/digitalindiana/NUIParse.git
+    :git: https://github.com/smithmicro/NUIParse.git
 
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 9d5fe43b29ae3a0ed8fc829477971b281038f748
   NUIParse: 8929ebb12419ca0bfdba3e0e1be47e33593b3fab
   "UIImage+ColorFromImage": b84b5f8b4dc9d996d17d2b736e1429f4a13b37e4
 
-PODFILE CHECKSUM: d54213b03ef6853884ece6bb73a5b0f4c4e0efaf
+PODFILE CHECKSUM: 6f7fc3d009c4db21f75d1621c1293905bb1178b6
 
 COCOAPODS: 1.9.3
