@@ -50,8 +50,7 @@
 		0EE9CA7C191EC96D00C84934 /* TestTheme.NUI.nss in Resources */ = {isa = PBXBuildFile; fileRef = 0EE9CA7B191EC96D00C84934 /* TestTheme.NUI.nss */; };
 		0EE9CA7D191ECA0F00C84934 /* TestTheme.NUI.nss in Resources */ = {isa = PBXBuildFile; fileRef = 0EE9CA7B191EC96D00C84934 /* TestTheme.NUI.nss */; };
 		165D32561BF2239900BF3069 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 165D32551BF2239900BF3069 /* Images.xcassets */; };
-		3830C7C440594F829971E4C2 /* libPods-NUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC7736AC8944034A5E10550 /* libPods-NUITests.a */; };
-		41A0DE98FD464C508748F886 /* libPods-NUIDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8B8BB2BB5E6412588AE14FA /* libPods-NUIDemo.a */; };
+		2D340BEF8D928AA9D3922B18 /* libPods-NUIDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A75B1158684DF7654867ED0D /* libPods-NUIDemo.a */; };
 		4A0B8636165EE59A005B5756 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0B8635165EE59A005B5756 /* UIKit.framework */; };
 		4A0B8638165EE59A005B5756 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0B8637165EE59A005B5756 /* Foundation.framework */; };
 		4A0B863A165EE59A005B5756 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0B8639165EE59A005B5756 /* CoreGraphics.framework */; };
@@ -94,6 +93,7 @@
 		4E61356E1C964C7A0005CA52 /* NUITextInputTraitsRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E860DD71C9642EF006F3B0E /* NUITextInputTraitsRenderer.m */; };
 		4E6135711C968D520005CA52 /* NUITextViewRendererTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6135701C968D520005CA52 /* NUITextViewRendererTests.m */; };
 		4E860DDA1C964897006F3B0E /* NUITextFieldRendererTextInputTraitsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E860DD91C964897006F3B0E /* NUITextFieldRendererTextInputTraitsTests.m */; };
+		54B0D648D236A560E98DC5BE /* libPods-NUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93D4852CFE55FA400508A22B /* libPods-NUITests.a */; };
 		5B5888C31992BD15005F1ACB /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5888C21992BD15005F1ACB /* Assets */; };
 		5B5888C41992BD1C005F1ACB /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5888C21992BD15005F1ACB /* Assets */; };
 		5B5888C61992BDA7005F1ACB /* NUIButtonRendererSubdirectoryImageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B5888C51992BDA7005F1ACB /* NUIButtonRendererSubdirectoryImageTests.m */; };
@@ -197,7 +197,6 @@
 		0EE34298193A116700306AC7 /* NUIControlRendererTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIControlRendererTests.m; sourceTree = "<group>"; };
 		0EE9CA7B191EC96D00C84934 /* TestTheme.NUI.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestTheme.NUI.nss; sourceTree = "<group>"; };
 		165D32551BF2239900BF3069 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		1B8E11A50FE5F75C66ACDBBD /* Pods-NUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NUITests/Pods-NUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3AE80CFA17E0EB290065FB3D /* NUIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIConstants.h; sourceTree = "<group>"; };
 		4A0B8631165EE59A005B5756 /* NUIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NUIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A0B8635165EE59A005B5756 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -270,16 +269,16 @@
 		4E860DD91C964897006F3B0E /* NUITextFieldRendererTextInputTraitsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUITextFieldRendererTextInputTraitsTests.m; path = UITextField/NUITextFieldRendererTextInputTraitsTests.m; sourceTree = "<group>"; };
 		5B5888C21992BD15005F1ACB /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
 		5B5888C51992BDA7005F1ACB /* NUIButtonRendererSubdirectoryImageTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIButtonRendererSubdirectoryImageTests.m; sourceTree = "<group>"; };
-		6327BDA600E6A42FDF1220F4 /* Pods-NUIDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NUIDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-NUIDemo/Pods-NUIDemo.release.xcconfig"; sourceTree = "<group>"; };
+		6A9651773CF922E6FDAE7B10 /* Pods-NUIDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NUIDemo.release.xcconfig"; path = "Target Support Files/Pods-NUIDemo/Pods-NUIDemo.release.xcconfig"; sourceTree = "<group>"; };
+		6B445BE8DC764338A472F63E /* Pods-NUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NUITests.debug.xcconfig"; path = "Target Support Files/Pods-NUITests/Pods-NUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7C5A17A61CCE1435001288C5 /* NUIActivityIndicatorRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIActivityIndicatorRenderer.h; sourceTree = "<group>"; };
 		7C5A17A71CCE1435001288C5 /* NUIActivityIndicatorRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIActivityIndicatorRenderer.m; sourceTree = "<group>"; };
 		7C5A17AA1CCE1822001288C5 /* NUIActivityIndicatorRendererTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUIActivityIndicatorRendererTests.m; path = UIActivityIndicatorView/NUIActivityIndicatorRendererTests.m; sourceTree = "<group>"; };
 		7C5A17AC1CCE19BC001288C5 /* UIActivityIndicatorView+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActivityIndicatorView+NUI.h"; sourceTree = "<group>"; };
 		7C5A17AD1CCE19BC001288C5 /* UIActivityIndicatorView+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActivityIndicatorView+NUI.m"; sourceTree = "<group>"; };
-		7CC7736AC8944034A5E10550 /* libPods-NUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		80CA9B780E980B9CA99F0367 /* Pods-NUIDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NUIDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NUIDemo/Pods-NUIDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		832B9C1A176AEADA0054F06E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = "en.lproj/iPad Storyboard.storyboard"; sourceTree = "<group>"; };
 		832B9C1D176AEAED0054F06E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = "en.lproj/iPhone Storyboard.storyboard"; sourceTree = "<group>"; };
+		859E0F7ED34F6F2C7B9E0903 /* Pods-NUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NUITests.release.xcconfig"; path = "Target Support Files/Pods-NUITests/Pods-NUITests.release.xcconfig"; sourceTree = "<group>"; };
 		89B940231671418100850A9A /* NUIAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIAppearance.h; sourceTree = "<group>"; };
 		89B940241671418100850A9A /* NUIAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIAppearance.m; sourceTree = "<group>"; };
 		89B940251671418100850A9A /* NUIConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIConverter.h; sourceTree = "<group>"; };
@@ -316,12 +315,13 @@
 		89B940451671418100850A9A /* NUIViewRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIViewRenderer.m; sourceTree = "<group>"; };
 		89B940461671418100850A9A /* NUIStyle.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NUIStyle.nss; sourceTree = "<group>"; };
 		89B9404A1671418100850A9A /* NUIViewBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NUIViewBackground.png; sourceTree = "<group>"; };
-		945E0E35381989455733E516 /* Pods-NUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NUITests/Pods-NUITests.release.xcconfig"; sourceTree = "<group>"; };
+		93D4852CFE55FA400508A22B /* libPods-NUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A75B1158684DF7654867ED0D /* libPods-NUIDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NUIDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEBB5FF8D14E78B119326455 /* Pods-NUIDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NUIDemo.debug.xcconfig"; path = "Target Support Files/Pods-NUIDemo/Pods-NUIDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		B51BC288169724A3004A38F8 /* UISwitch+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISwitch+NUI.h"; sourceTree = "<group>"; };
 		B51BC289169724A3004A38F8 /* UISwitch+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISwitch+NUI.m"; sourceTree = "<group>"; };
 		B51BC28C16972527004A38F8 /* NUISwitchRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUISwitchRenderer.h; sourceTree = "<group>"; };
 		B51BC28D16972527004A38F8 /* NUISwitchRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISwitchRenderer.m; sourceTree = "<group>"; };
-		B8B8BB2BB5E6412588AE14FA /* libPods-NUIDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NUIDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB8A030E17CC1F7C0065A7DD /* NUITextViewRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUITextViewRenderer.h; sourceTree = "<group>"; };
 		CB8A030F17CC1F7C0065A7DD /* NUITextViewRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUITextViewRenderer.m; sourceTree = "<group>"; };
 		CB8A031117CC1FCB0065A7DD /* UITextView+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+NUI.h"; sourceTree = "<group>"; };
@@ -380,7 +380,7 @@
 				0E8A86C318EC08970027F275 /* XCTest.framework in Frameworks */,
 				0E8A86B318EC07C40027F275 /* UIKit.framework in Frameworks */,
 				0E8A86B218EC07C40027F275 /* Foundation.framework in Frameworks */,
-				3830C7C440594F829971E4C2 /* libPods-NUITests.a in Frameworks */,
+				54B0D648D236A560E98DC5BE /* libPods-NUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,7 +393,7 @@
 				4A0B8636165EE59A005B5756 /* UIKit.framework in Frameworks */,
 				4A0B8638165EE59A005B5756 /* Foundation.framework in Frameworks */,
 				4A0B863A165EE59A005B5756 /* CoreGraphics.framework in Frameworks */,
-				41A0DE98FD464C508748F886 /* libPods-NUIDemo.a in Frameworks */,
+				2D340BEF8D928AA9D3922B18 /* libPods-NUIDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,7 +566,7 @@
 				0E8A86B418EC07C40027F275 /* NUITests */,
 				4A0B8634165EE59A005B5756 /* Frameworks */,
 				4A0B8632165EE59A005B5756 /* Products */,
-				F996B2068B95454E79C3F5AA /* Pods */,
+				8F5D1425505C94F208555C78 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -588,8 +588,8 @@
 				4A0B8635165EE59A005B5756 /* UIKit.framework */,
 				4A0B8637165EE59A005B5756 /* Foundation.framework */,
 				4A0B8639165EE59A005B5756 /* CoreGraphics.framework */,
-				B8B8BB2BB5E6412588AE14FA /* libPods-NUIDemo.a */,
-				7CC7736AC8944034A5E10550 /* libPods-NUITests.a */,
+				A75B1158684DF7654867ED0D /* libPods-NUIDemo.a */,
+				93D4852CFE55FA400508A22B /* libPods-NUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -833,6 +833,18 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		8F5D1425505C94F208555C78 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AEBB5FF8D14E78B119326455 /* Pods-NUIDemo.debug.xcconfig */,
+				6A9651773CF922E6FDAE7B10 /* Pods-NUIDemo.release.xcconfig */,
+				6B445BE8DC764338A472F63E /* Pods-NUITests.debug.xcconfig */,
+				859E0F7ED34F6F2C7B9E0903 /* Pods-NUITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		EAB69CA91885E1AE00358420 /* Parser */ = {
 			isa = PBXGroup;
 			children = (
@@ -862,17 +874,6 @@
 			name = Parser;
 			sourceTree = "<group>";
 		};
-		F996B2068B95454E79C3F5AA /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				80CA9B780E980B9CA99F0367 /* Pods-NUIDemo.debug.xcconfig */,
-				6327BDA600E6A42FDF1220F4 /* Pods-NUIDemo.release.xcconfig */,
-				1B8E11A50FE5F75C66ACDBBD /* Pods-NUITests.debug.xcconfig */,
-				945E0E35381989455733E516 /* Pods-NUITests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -880,12 +881,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0E8A86BF18EC07C40027F275 /* Build configuration list for PBXNativeTarget "NUITests" */;
 			buildPhases = (
-				D18DC955A3494F55929BE412 /* Check Pods Manifest.lock */,
+				ECF4E0660D5633B987A4EFAC /* [CP] Check Pods Manifest.lock */,
 				0E8A86AB18EC07C40027F275 /* Sources */,
 				0E8A86AC18EC07C40027F275 /* Frameworks */,
 				0E8A86AD18EC07C40027F275 /* Resources */,
-				5A93E79F762742CE9B93D7BF /* Copy Pods Resources */,
-				8EFA500C919C4D6E1A73EED7 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -901,12 +900,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A0B864F165EE59A005B5756 /* Build configuration list for PBXNativeTarget "NUIDemo" */;
 			buildPhases = (
-				1E8011286D7F4F9493ADE186 /* Check Pods Manifest.lock */,
+				210200CA89859EE6EDBAE8FC /* [CP] Check Pods Manifest.lock */,
 				4A0B862D165EE59A005B5756 /* Sources */,
 				4A0B862E165EE59A005B5756 /* Frameworks */,
 				4A0B862F165EE59A005B5756 /* Resources */,
-				E24C83133215433AAA630B11 /* Copy Pods Resources */,
-				4ECE07FBDB597D16459C5B41 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -998,94 +995,48 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1E8011286D7F4F9493ADE186 /* Check Pods Manifest.lock */ = {
+		210200CA89859EE6EDBAE8FC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
+			inputFileListPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NUIDemo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4ECE07FBDB597D16459C5B41 /* Embed Pods Frameworks */ = {
+		ECF4E0660D5633B987A4EFAC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
+			inputFileListPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NUIDemo/Pods-NUIDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5A93E79F762742CE9B93D7BF /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NUITests/Pods-NUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8EFA500C919C4D6E1A73EED7 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NUITests/Pods-NUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D18DC955A3494F55929BE412 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		E24C83133215433AAA630B11 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NUIDemo/Pods-NUIDemo-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1252,7 +1203,7 @@
 /* Begin XCBuildConfiguration section */
 		0E8A86C018EC07C40027F275 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B8E11A50FE5F75C66ACDBBD /* Pods-NUITests.debug.xcconfig */;
+			baseConfigurationReference = 6B445BE8DC764338A472F63E /* Pods-NUITests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NUIDemo.app/NUIDemo";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1284,7 +1235,7 @@
 		};
 		0E8A86C118EC07C40027F275 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 945E0E35381989455733E516 /* Pods-NUITests.release.xcconfig */;
+			baseConfigurationReference = 859E0F7ED34F6F2C7B9E0903 /* Pods-NUITests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NUIDemo.app/NUIDemo";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1374,7 +1325,7 @@
 		};
 		4A0B8650165EE59A005B5756 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80CA9B780E980B9CA99F0367 /* Pods-NUIDemo.debug.xcconfig */;
+			baseConfigurationReference = AEBB5FF8D14E78B119326455 /* Pods-NUIDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1390,7 +1341,7 @@
 		};
 		4A0B8651165EE59A005B5756 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6327BDA600E6A42FDF1220F4 /* Pods-NUIDemo.release.xcconfig */;
+			baseConfigurationReference = 6A9651773CF922E6FDAE7B10 /* Pods-NUIDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

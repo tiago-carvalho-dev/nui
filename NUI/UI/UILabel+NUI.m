@@ -46,32 +46,32 @@
         [self setText:[self text]];
 }
 
-- (void)override_didMoveToWindow
+- (void)override_UILabel_didMoveToWindow
 {
     if (!self.isNUIApplied) {
         [self applyNUI];
     }
-    [self override_didMoveToWindow];
+    [self override_UILabel_didMoveToWindow];
 }
 
-- (void)override_setText:(NSString *)text
+- (void)override_UILabel_setText:(NSString *)text
 {
     NSString *transformedText = text;
     
     if (text && self.nuiClass && ![self.nuiClass isEqualToString:kNUIClassNone])
         transformedText = [NUIRenderer transformText:text withClass:self.nuiClass];
         
-    [self override_setText:transformedText];
+    [self override_UILabel_setText:transformedText];
 }
 
-- (void)override_setAttributedText:(NSAttributedString *)text
+- (void)override_UILabel_setAttributedText:(NSAttributedString *)text
 {
     NSAttributedString *transformedText = text;
     
     if (text && self.nuiClass && ![self.nuiClass isEqualToString:kNUIClassNone])
         transformedText = [NUIRenderer transformAttributedText:text withClass:self.nuiClass];
     
-    [self override_setAttributedText:transformedText];
+    [self override_UILabel_setAttributedText:transformedText];
 }
 
 @end

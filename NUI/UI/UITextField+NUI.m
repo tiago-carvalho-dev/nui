@@ -26,12 +26,12 @@
     self.nuiApplied = YES;
 }
 
-- (void)override_didMoveToWindow
+- (void)override_UITextField_didMoveToWindow
 {
     if (!self.isNUIApplied) {
         [self applyNUI];
     }
-    [self override_didMoveToWindow];
+    [self override_UITextField_didMoveToWindow];
 }
 
 - (BOOL)nuiShouldBeApplied
@@ -45,7 +45,7 @@
 }
 
 // Padding apparently can't be modified during didMoveToWindow
-- (CGRect)override_textRectForBounds:(CGRect)bounds {
+- (CGRect)override_UITextField_textRectForBounds:(CGRect)bounds {
     if ([self nuiShouldBeApplied] &&
         [NUISettings hasProperty:@"padding" withClass:self.nuiClass]) {
         UIEdgeInsets insets = [NUISettings getEdgeInsets:@"padding" withClass:self.nuiClass];
@@ -54,11 +54,11 @@
                           bounds.size.width - (insets.left + insets.right),
                           bounds.size.height - (insets.top + insets.bottom));
     } else {
-        return [self override_textRectForBounds:bounds];
+        return [self override_UITextField_textRectForBounds:bounds];
     }
 }
 
-- (CGRect)override_editingRectForBounds:(CGRect)bounds {
+- (CGRect)override_UITextField_editingRectForBounds:(CGRect)bounds {
     return [self textRectForBounds:bounds];
 }
 

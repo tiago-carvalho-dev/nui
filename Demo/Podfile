@@ -2,7 +2,7 @@
 platform :ios, '6.0'
 
 target "NUIDemo" do
-  pod "NUIParse"
+  pod "NUIParse", :git => 'https://github.com/smithmicro/NUIParse.git', :branch => 'master'
 end
 
 target "NUITests" do
