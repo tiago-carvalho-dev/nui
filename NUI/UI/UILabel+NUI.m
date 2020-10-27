@@ -56,6 +56,12 @@
 
 - (void)override_UILabel_setText:(NSString *)text
 {
+    if (text != nil && [text hasHtmlElements]) {
+        self.nuiClass = kNUIClassNone;
+        self.attributedText = [NUIUtilities generateStylesFromHtml:text];
+        return;
+    }
+    
     NSString *transformedText = text;
     
     if (text && self.nuiClass && ![self.nuiClass isEqualToString:kNUIClassNone])
