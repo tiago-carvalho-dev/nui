@@ -2,6 +2,8 @@
 
 @implementation UITextView (NUI)
 
+@dynamic nuiHtmlText;
+
 - (void)initNUI
 {
     if (!self.nuiClass) {
@@ -26,6 +28,22 @@
         [self applyNUI];
     }
     [self override_UITextView_didMoveToWindow];
+}
+
+- (void)setNuiHtmlText:(NSString *)nuiHtmlText
+{
+    NSArray *attributes = [NUIUtilities generateStylesAndLinksFromHtml:nuiHtmlText];
+    if (attributes == nil) {
+        return;
+    }
+    
+    if (attributes.count > 0) {
+        self.attributedText = attributes[0];
+    }
+    
+    if (attributes.count > 1) {
+        self.linkTextAttributes = attributes[1];
+    }
 }
 
 @end

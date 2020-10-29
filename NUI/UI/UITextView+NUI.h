@@ -4,4 +4,6 @@
 
 @interface UITextView (NUI)
 
+@property NSString *nuiHtmlText;
+
 @end

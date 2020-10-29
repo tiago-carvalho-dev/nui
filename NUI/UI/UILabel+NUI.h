@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <objc/runtime.h>
 #import "NUIRenderer.h"
+#import "NSString+NUI.h"
 
 @interface UILabel (NUI)
 

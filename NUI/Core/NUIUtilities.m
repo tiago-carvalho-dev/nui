@@ -73,8 +73,158 @@
     if (suffix) {
         return [NSString stringWithFormat:@"%@-%@", selector, suffix];
     }
+    
     return selector;
 }
 
++ (NSMutableAttributedString *)generateStylesFromHtml:(NSString *)htmlText
+{
+    NSRegularExpression *outerSpanRegex = [NSRegularExpression regularExpressionWithPattern:@"<span[^>]*>.*<.*</span>" options:NSRegularExpressionDotMatchesLineSeparators error:nil];
+    NSArray *matches = [outerSpanRegex matchesInString:htmlText options:0 range:NSMakeRange(0, htmlText.length)];
+    
+    NSString *surroundingNuiClass;
+    for (NSTextCheckingResult *match in matches) {
+        NSString *matchedString = [htmlText substringWithRange:match.range];
+        surroundingNuiClass = [self getClassNameOnSpanTag:matchedString];
+    }
+
+    NSMutableDictionary<NSAttributedStringKey, id> *attributes = [[NSMutableDictionary alloc] init];
+    
+    if (surroundingNuiClass != nil && ([NUISettings hasProperty:@"font-name" withClass:surroundingNuiClass] || [NUISettings hasProperty:@"font-size" withClass:surroundingNuiClass])) {
+        attributes[NSFontAttributeName] = [NUISettings getFontWithClass:surroundingNuiClass];
+    }
+    
+    if (surroundingNuiClass != nil && [NUISettings hasProperty:@"font-color" withClass:surroundingNuiClass]) {
+        attributes[NSForegroundColorAttributeName] = [NUISettings getColor:@"font-color" withClass:surroundingNuiClass];
+    }
+
+    NSMutableAttributedString *attributedStringResult = [[NSMutableAttributedString alloc] initWithString:htmlText attributes:attributes];
+
+    NSRegularExpression *innerSpanRegex = [NSRegularExpression regularExpressionWithPattern:@"<span[^>]*>[^<]*</span>" options:NSRegularExpressionDotMatchesLineSeparators error:nil];
+    matches = [innerSpanRegex matchesInString:htmlText options:0 range:NSMakeRange(0, htmlText.length)];
+
+    UIFont *font;
+    UIColor *color;
+    for (NSTextCheckingResult *match in matches) {
+        NSString *matchedString = [htmlText substringWithRange:match.range];
+
+        NSString *className = [self getClassNameOnSpanTag:matchedString];
+        if (className == nil) {
+            continue;
+        }
+        
+        if (![NUISettings hasProperty:@"font-name" withClass:className] && ![NUISettings hasProperty:@"font-size" withClass:className]) {
+            continue;
+        }
+        
+        font = [NUISettings getFontWithClass:className];
+        [attributedStringResult addAttribute:NSFontAttributeName value:font range:match.range];
+        
+        if (![NUISettings hasProperty:@"font-color" withClass:className]) {
+            continue;
+        }
+        
+        color = [NUISettings getColor:@"font-color" withClass:className];
+        [attributedStringResult addAttribute:NSForegroundColorAttributeName value:color range:match.range];
+    }
+
+    attributedStringResult = [self removeTags:attributedStringResult withTagName:@"span"];
+
+    return attributedStringResult;
+}
+
++ (NSString *)getClassNameOnSpanTag:(NSString *)spanTag
+{
+    NSArray *items = [spanTag componentsSeparatedByString:@"<span"];
+    if (items.count < 2) {
+        return nil;
+    }
+    
+    NSString *attributePart = items[1];
+    items = [attributePart componentsSeparatedByString:@"="];
+    if (items.count < 2) {
+        return nil;
+    }
+
+    NSString *attributeName = [items[0] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    if ([attributeName isEqualToString:@"class"]) {
+        attributePart = [items[1] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        NSString *attributeValue = @"";
+        BOOL hasStartedClassName = NO;
+        for (NSInteger index = 0; index < attributePart.length; index++) {
+            unichar ch = [attributePart characterAtIndex:index];
+            if (ch == '\'') {
+                if (!hasStartedClassName) {
+                    hasStartedClassName = YES;
+                } else {
+                    break;
+                }
+            } else {
+                attributeValue = [attributeValue stringByAppendingString:[NSString stringWithFormat:@"%c", ch]];
+            }
+        }
+        return attributeValue;
+    }
+
+    return nil;
+}
+
++ (NSMutableAttributedString *)removeTags:(NSMutableAttributedString*)attributedStringResult withTagName:tagName
+{
+    NSString* startTag = [@"<" stringByAppendingString:tagName];
+    NSString* startTagWithAttributes = [startTag stringByAppendingString:@"[^>]*>"];
+    NSString* endTag = [@"</" stringByAppendingString:tagName];
+    endTag = [endTag stringByAppendingString:@">"];
+    while ([attributedStringResult.string containsString:startTag] || [attributedStringResult.string containsString:endTag]) {
+        NSRange rangeOfTag = [attributedStringResult.string rangeOfString:startTagWithAttributes options:NSRegularExpressionSearch];
+        [attributedStringResult replaceCharactersInRange:rangeOfTag withString:@""];
+        rangeOfTag = [attributedStringResult.string rangeOfString:endTag];
+        [attributedStringResult replaceCharactersInRange:rangeOfTag withString:@""];
+    }
+    return attributedStringResult;
+}
+
++ (NSArray *)generateStylesAndLinksFromHtml:(NSString *)htmlText
+{
+    NSMutableAttributedString *attributedText = [NUIUtilities generateStylesFromHtml:htmlText];
+    NSString *changedHtmlText = attributedText.string;
+    
+    // Searching for the first link with class name
+    NSRegularExpression *anchorRegex = [NSRegularExpression regularExpressionWithPattern:@"<a[\\s]+href='([^']*)'[\\s]+class='([^']*)'>([^<]*)</a>" options:NSRegularExpressionCaseInsensitive error:nil];
+    NSArray *matches = [anchorRegex matchesInString:changedHtmlText options:0 range:NSMakeRange(0, changedHtmlText.length)];
+    
+    UIColor *linkColor;
+    for (NSTextCheckingResult *match in matches) {
+        NSString *matchedLink = [changedHtmlText substringWithRange:[match rangeAtIndex:1]];
+        NSString *className = [changedHtmlText substringWithRange:[match rangeAtIndex:2]];
+        
+        if ([NUISettings hasProperty:@"font-color" withClass:className]) {
+            linkColor = [NUISettings getColor:@"font-color" withClass:className];
+        }
+        
+        NSString *matchedString = [changedHtmlText substringWithRange:[match rangeAtIndex:3]];
+        NSRange range = [attributedText.string rangeOfString:matchedString];
+        [attributedText addAttribute:NSLinkAttributeName value:matchedLink range:range];
+    }
+    
+    // If available, searching for remaining links (they must not have class names)
+    NSRegularExpression *anchorRegexRemaning = [NSRegularExpression regularExpressionWithPattern:@"<a[\\s]+href='([^']*)'>([^<]*)</a>" options:NSRegularExpressionCaseInsensitive error:nil];
+    NSArray *matchesRemaining = [anchorRegexRemaning matchesInString:changedHtmlText options:0 range:NSMakeRange(0, changedHtmlText.length)];
+    
+    for (NSTextCheckingResult *match in matchesRemaining) {
+        NSString *matchedLink = [changedHtmlText substringWithRange:[match rangeAtIndex:1]];
+        NSString *matchedString = [changedHtmlText substringWithRange:[match rangeAtIndex:2]];
+        NSRange range = [attributedText.string rangeOfString:matchedString];
+        [attributedText addAttribute:NSLinkAttributeName value:matchedLink range:range];
+    }
+    
+    attributedText = [self removeTags:attributedText withTagName:@"a"];
+    
+    if (linkColor != nil) {
+        return @[attributedText, @{NSForegroundColorAttributeName: linkColor}];
+    }
+    
+    return @[attributedText];
+}
 
 @end
